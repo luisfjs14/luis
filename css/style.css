@@ -1071,3 +1071,18 @@ body {
     color: var(--primary-color); /* Texto azul ao passar o mouse */
     transform: translateY(-2px); /* Efeito sutil de levantar */
 }
+
+.about-left {
+    text-align: left;
+}
+
+.about-left ul,
+.about-left ol {
+    margin-left: 20px;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.about-left p {
+    text-align: left;
+}
