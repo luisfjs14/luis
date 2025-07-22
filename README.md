@@ -50,7 +50,7 @@ Um projeto desenvolvido do zero, incluindo:
 
 ## 📂 Como Acessar
 
-Todo o conteúdo apresentado no meu portfólio está disponível diretamente através do [site oficial do meu portfólio](https://objetivointegradouberaba.com/) ou via os repositórios públicos aqui no GitHub.
+Todo o conteúdo apresentado no meu portfólio está disponível diretamente através do [site oficial do meu portfólio](https://luisfjs14.github.io/luis/) ou via os repositórios públicos aqui no GitHub.
 
 Você encontrará também imagens, descrições detalhadas dos projetos e demonstrações funcionais.
 
