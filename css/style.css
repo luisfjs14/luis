@@ -1000,3 +1000,74 @@ body {
         grid-template-columns: 1fr; /* Empilha as colunas em telas menores */
     }
 }
+
+/* --- Seção Habilidades --- */
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.skill-category {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    border-bottom: 4px solid var(--primary-color);
+    /* Adicionado para centralizar o conteúdo dentro da categoria */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skill-category:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.skill-category h3 {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%; /* Garante que o h3 ocupe a largura para o border-bottom */
+    border-bottom: 2px solid var(--light-gray);
+    padding-bottom: 10px;
+}
+
+/* NOVO ESTILO PARA O CONTAINER DOS BALÕES */
+.skill-bubbles {
+    display: flex;
+    flex-wrap: wrap; /* Faz com que os itens quebrem para a próxima linha */
+    justify-content: center; /* Centraliza os balões horizontalmente */
+    gap: 10px; /* Espaçamento entre os balões */
+    margin-top: 15px; /* Espaço entre o título e os balões */
+    width: 100%; /* Ocupa a largura total do pai */
+}
+
+/* NOVO ESTILO PARA CADA BALÃO DE HABILIDADE */
+.skill-bubble {
+    background-color: var(--primary-color); /* Fundo azul para o balão */
+    color: var(--white); /* Texto branco */
+    padding: 8px 15px; /* Padding interno */
+    border-radius: 20px; /* Borda bem arredondada para o efeito de balão */
+    font-size: 0.95rem; /* Tamanho da fonte */
+    font-weight: 500;
+    white-space: nowrap; /* Impede que o texto quebre dentro do balão */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: background-color var(--transition-speed), color var(--transition-speed), transform var(--transition-speed); /* Adicionada transição para a cor do texto e transform para hover */
+    margin: 0; /* Remove margem padrão de p */
+    cursor: default; /* Indica que não é clicável */
+}
+
+.skill-bubble:hover {
+    background-color: var(--white); /* Fundo branco ao passar o mouse */
+    color: var(--primary-color); /* Texto azul ao passar o mouse */
+    transform: translateY(-2px); /* Efeito sutil de levantar */
+}
