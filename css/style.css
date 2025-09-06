@@ -1,17 +1,16 @@
-/* --- Variáveis CSS para Cores e Fontes --- */
+/* --- Variáveis CSS para Cores e Fontes (NOVO TEMA DARK/NEON) --- */
 :root {
-    --primary-color: #007bff; /* Azul vibrante */
-    --secondary-color: #6c757d; /* Cinza médio */
-    --background-color: #f8f9fa; /* Fundo claro */
-    --text-color: #343a40; /* Texto escuro */
-    --light-gray: #e9ecef; /* Cinza claro para fundos alternados */
-    --dark-gray: #495057; /* Cinza escuro */
+    --primary-color: #00aaff; /* Azul Neon */
+    --secondary-color: #777; /* Cinza para detalhes */
+    --background-color: #0d0d0d; /* Fundo escuro */
+    --text-color: #f1f1f1; /* Texto claro */
+    --light-gray: #1a1a1a; /* Cinza claro para fundos alternados */
+    --dark-gray: #333; /* Cinza escuro */
     --white: #ffffff;
-    --border-color: #dee2e6; /* Cor de borda */
+    --border-color: #444; /* Cor de borda escura */
 
     --font-primary: 'Poppins', sans-serif;
-
-    --transition-speed: 0.3s ease;
+    --transition-speed: 0.4s ease;
 }
 
 /* --- Reset Básico e Estilos Globais --- */
@@ -22,15 +21,15 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Rolagem suave para âncoras */
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: var(--font-primary);
-    line-height: 1.6;
+    line-height: 1.7;
     color: var(--text-color);
     background-color: var(--background-color);
-    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+    overflow-x: hidden;
 }
 
 .container {
@@ -40,7 +39,7 @@ body {
 }
 
 .section-padding {
-    padding: 80px 0; /* Espaçamento padrão para seções */
+    padding: 100px 0;
 }
 
 .bg-light {
@@ -48,12 +47,13 @@ body {
 }
 
 .section-title {
-    font-size: 2.8em;
-    color: var(--dark-gray);
+    font-size: 3em;
+    color: var(--primary-color);
     text-align: center;
     margin-bottom: 60px;
     position: relative;
-    padding-bottom: 15px;
+    padding-bottom: 20px;
+    text-shadow: 0 0 15px rgba(0, 170, 255, 0.5); /* Efeito de brilho */
 }
 
 .section-title::after {
@@ -62,36 +62,34 @@ body {
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
-    width: 80px;
+    width: 100px;
     height: 4px;
     background-color: var(--primary-color);
     border-radius: 5px;
 }
 
-/* --- Botões --- */
-.btn {
+/* --- Botões NOVO ESTILO (GLOW) --- */
+.btn-glow {
     display: inline-block;
     padding: 12px 25px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
-    transition: all var(--transition-speed);
     text-align: center;
     cursor: pointer;
     font-size: 0.95em;
     border: 2px solid transparent;
-}
-
-.btn-primary {
+    transition: all var(--transition-speed);
+    
     background-color: var(--primary-color);
-    color: var(--white);
-    border-color: var(--primary-color);
+    color: var(--background-color); /* Texto escuro */
+    box-shadow: 0 0 12px rgba(0, 170, 255, 0.6);
 }
 
-.btn-primary:hover {
-    background-color: #0056b3; /* Tom mais escuro */
+.btn-glow:hover {
+    background-color: #0088cc;
+    box-shadow: 0 0 25px rgba(0, 170, 255, 1);
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .btn-secondary {
@@ -102,26 +100,9 @@ body {
 
 .btn-secondary:hover {
     background-color: var(--primary-color);
-    color: var(--white);
+    color: var(--background-color);
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.btn-sm {
-    padding: 8px 18px;
-    font-size: 0.85em;
-}
-
-.btn-outline {
-    background-color: transparent;
-    color: var(--primary-color);
-    border: 1px solid var(--primary-color);
-}
-
-.btn-outline:hover {
-    background-color: var(--primary-color);
-    color: var(--white);
-    transform: translateY(-2px);
 }
 
 .btn i {
@@ -130,9 +111,9 @@ body {
 
 /* --- Header e Navegação --- */
 .header {
-    background-color: rgba(255, 255, 255, 0.95);
-    padding: 15px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    background-color: rgba(13, 13, 13, 0.95);
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     position: sticky;
     top: 0;
     left: 0;
@@ -147,7 +128,7 @@ body {
 }
 
 .logo {
-    font-size: 1.8em;
+    font-size: 2em;
     font-weight: 700;
     color: var(--primary-color);
     text-decoration: none;
@@ -164,10 +145,10 @@ body {
 
 .nav-menu ul li a {
     text-decoration: none;
-    color: var(--dark-gray);
+    color: var(--text-color);
     font-weight: 500;
     font-size: 1.05em;
-    transition: color var(--transition-speed);
+    transition: color var(--transition-speed), text-shadow var(--transition-speed);
     position: relative;
     padding-bottom: 5px;
 }
@@ -184,16 +165,17 @@ body {
 }
 
 .nav-menu ul li a:hover::after,
-.nav-menu ul li a.active::after { /* Adicionar classe 'active' via JS para a seção atual */
+.nav-menu ul li a.active::after {
     width: 100%;
 }
 
 .nav-menu ul li a:hover {
     color: var(--primary-color);
+    text-shadow: 0 0 8px rgba(0, 170, 255, 0.8);
 }
 
 .nav-toggle {
-    display: none; /* Escondido por padrão em desktop */
+    display: none;
     background: none;
     border: none;
     font-size: 1.8em;
@@ -203,8 +185,8 @@ body {
 
 /* --- Seção Hero (Home) --- */
 .hero {
-    background: linear-gradient(135deg, var(--background-color) 0%, var(--light-gray) 100%);
-    min-height: 90vh; /* Ocupa a maior parte da tela */
+    background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+    min-height: 90vh;
     display: flex;
     align-items: center;
     text-align: left;
@@ -213,33 +195,34 @@ body {
 .hero-content {
     display: flex;
     align-items: center;
-    justify-content: center; /* Centraliza horizontalmente */
-    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
-    gap: 50px; /* Espaçamento entre texto e imagem */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
 }
 
 .hero-text {
     flex: 1;
-    min-width: 300px; /* Garante que o texto não fique muito pequeno */
+    min-width: 300px;
 }
 
 .hero-image {
-    flex-shrink: 0; /* Impede que a imagem encolha */
+    flex-shrink: 0;
     text-align: center;
 }
 
 .profile-pic {
-    width: 280px; /* Tamanho da imagem de perfil */
+    width: 280px;
     height: 280px;
-    border-radius: 50%; /* Torna a imagem circular */
+    border-radius: 50%;
     object-fit: cover;
     border: 5px solid var(--primary-color);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    transition: transform var(--transition-speed);
+    box-shadow: 0 0 20px rgba(0, 170, 255, 0.4);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
 }
 
 .profile-pic:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 170, 255, 0.8);
 }
 
 .hero .subtitle {
@@ -250,17 +233,17 @@ body {
 }
 
 .hero .name {
-    font-size: 3.5em;
+    font-size: 3.8em;
     font-weight: 700;
-    color: var(--text-color);
+    color: var(--white);
     line-height: 1.1;
     margin-bottom: 10px;
 }
 
 .hero .role {
-    font-size: 1.8em;
+    font-size: 2em;
     font-weight: 600;
-    color: var(--dark-gray);
+    color: var(--text-color);
     margin-bottom: 25px;
 }
 
@@ -269,13 +252,14 @@ body {
     line-height: 1.7;
     max-width: 600px;
     margin-bottom: 40px;
+    color: #ccc;
 }
 
 .hero-buttons {
     display: flex;
     gap: 20px;
     margin-bottom: 30px;
-    flex-wrap: wrap; /* Para botões em linha em telas pequenas */
+    flex-wrap: wrap;
 }
 
 .social-links {
@@ -284,22 +268,15 @@ body {
 }
 
 .social-links a {
-    color: var(--dark-gray);
+    color: var(--primary-color);
     font-size: 1.8em;
-    transition: color var(--transition-speed), transform var(--transition-speed);
+    transition: color var(--transition-speed), transform var(--transition-speed), text-shadow var(--transition-speed);
 }
 
 .social-links a:hover {
-    color: var(--primary-color);
+    color: var(--white);
     transform: translateY(-5px);
-}
-
-/* Para ícones grandes na seção de contato */
-.social-links.large-icons a {
-    font-size: 1.3em;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    text-shadow: 0 0 10px var(--primary-color);
 }
 
 /* --- Seção Sobre Mim --- */
@@ -313,10 +290,11 @@ body {
 
 .about-content p {
     margin-bottom: 20px;
+    color: #ccc;
 }
 
-/* --- Seção Habilidades --- */
-.skills-grid {
+/* --- Seção Habilidades (NOVO DESIGN) --- */
+.skills-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
@@ -324,18 +302,21 @@ body {
 }
 
 .skill-category {
-    background-color: var(--white);
+    background-color: #1a1a1a;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 0 20px rgba(0, 170, 255, 0.1);
     text-align: center;
     transition: transform var(--transition-speed), box-shadow var(--transition-speed);
     border-bottom: 4px solid var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .skill-category:hover {
     transform: translateY(-10px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 30px rgba(0, 170, 255, 0.3);
 }
 
 .skill-category h3 {
@@ -346,136 +327,161 @@ body {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    width: 100%;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
 }
 
-.skill-category ul {
-    list-style: none;
-    padding: 0;
+.skill-bubbles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+    width: 100%;
 }
 
-.skill-category ul li {
-    background-color: var(--light-gray);
+.skill-bubble {
+    background-color: var(--primary-color);
+    color: var(--background-color);
     padding: 8px 15px;
-    margin: 10px 0;
-    border-radius: 5px;
+    border-radius: 20px;
+    font-size: 0.95rem;
     font-weight: 500;
-    color: var(--dark-gray);
-    display: inline-block; /* Para tags de habilidades */
-    margin: 5px;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: all var(--transition-speed);
+    cursor: default;
 }
 
-/* --- Seção Experiência (Timeline) --- */
-.timeline {
-    position: relative;
+.skill-bubble:hover {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+/* --- Seção Experiência (Grid de Cartões) --- */
+/* --- Seção Experiência (Grid de Cartões - Adaptado para Carrossel em Mobile) --- */
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
     max-width: 900px;
     margin: 0 auto;
-    padding: 0 20px;
+    /* Adicionado para telas maiores para manter o layout de grid */
 }
 
-.timeline::before {
-    content: '';
-    position: absolute;
-    width: 4px;
-    background-color: var(--primary-color);
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -2px;
-}
+/* Estilos específicos para mobile (carrossel) */
+@media (max-width: 768px) {
+    .experience-grid {
+        display: flex; /* Muda para flexbox para permitir o scroll horizontal */
+        overflow-x: auto; /* Habilita a rolagem horizontal */
+        scroll-snap-type: x mandatory; /* Para o scroll "grudar" nos itens */
+        -webkit-overflow-scrolling: touch; /* Suaviza o scroll em iOS */
+        padding-bottom: 20px; /* Espaço para a scrollbar/instrução */
+        justify-content: flex-start; /* Alinha os itens ao início */
+        gap: 20px; /* Reduz o gap para caber mais itens */
+        margin-left: 20px; /* Ajuste para centralizar visualmente */
+        margin-right: 20px;
+    }
 
-.timeline-item {
-    padding: 10px 0;
-    position: relative;
-    width: 50%;
-    margin-bottom: 50px; /* Espaçamento entre os itens */
-}
+    .experience-grid::-webkit-scrollbar {
+        height: 8px; /* Altura da scrollbar */
+    }
 
-.timeline-item:nth-child(odd) {
-    left: 0;
-    padding-right: 30px;
-    text-align: right;
-}
+    .experience-grid::-webkit-scrollbar-thumb {
+        background-color: var(--primary-color); /* Cor do "pino" da scrollbar */
+        border-radius: 10px;
+    }
 
-.timeline-item:nth-child(even) {
-    left: 50%;
-    padding-left: 30px;
-    text-align: left;
-}
+    .experience-grid::-webkit-scrollbar-track {
+        background-color: var(--dark-gray); /* Cor do fundo da scrollbar */
+        border-radius: 10px;
+    }
 
-.timeline-dot {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: var(--primary-color);
-    border-radius: 50%;
-    top: 10px;
-    z-index: 1;
-    border: 3px solid var(--white);
-}
+    .experience-card {
+        flex-shrink: 0; /* Impede que os cartões diminuam */
+        width: 85%; /* Define uma largura para os cartões no carrossel */
+        max-width: 350px; /* Limita a largura máxima do cartão */
+        scroll-snap-align: start; /* Alinha o início do cartão ao ponto de snap */
+        margin-bottom: 0; /* Remove margem inferior em mobile para o grid */
+    }
 
-.timeline-item:nth-child(odd) .timeline-dot {
-    right: -10px; /* Ajuste para centralizar no lado esquerdo */
-}
+    .experience-card:first-child {
+        margin-left: 0; /* Remove a margem extra do primeiro item se houver */
+    }
 
-.timeline-item:nth-child(even) .timeline-dot {
-    left: -10px; /* Ajuste para centralizar no lado direito */
+    .experience-card:last-child {
+        margin-right: 0; /* Remove a margem extra do último item se houver */
+    }
 }
 
 
-.timeline-date {
-    font-size: 0.9em;
-    font-weight: 600;
-    color: var(--secondary-color);
-    margin-bottom: 5px;
+.experience-card {
+    background-color: var(--dark-gray);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-bottom: 4px solid var(--primary-color);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-.timeline-content {
-    background-color: var(--white);
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    position: relative;
-    transition: transform var(--transition-speed);
-    border-left: 5px solid var(--primary-color); /* Linha lateral */
+.experience-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
 }
 
-.timeline-item:nth-child(odd) .timeline-content {
-    border-left: none; /* Remove a borda esquerda para o lado esquerdo */
-    border-right: 5px solid var(--primary-color); /* Adiciona borda direita */
+.card-icon {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
 }
 
-.timeline-content:hover {
-    transform: translateY(-5px);
-}
-
-.timeline-content h3 {
-    font-size: 1.5em;
+.card-title {
+    font-size: 1.6em;
     color: var(--primary-color);
     margin-bottom: 5px;
 }
 
-.timeline-content h4 {
+.card-subtitle {
     font-size: 1.1em;
-    color: var(--dark-gray);
-    margin-bottom: 15px;
+    color: var(--secondary-color);
     font-weight: 500;
+    margin-bottom: 10px;
 }
 
-.timeline-content ul {
+.card-date {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #ccc;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.card-list {
     list-style: none;
     padding-left: 0;
+    text-align: left;
+    width: 100%;
 }
 
-.timeline-content ul li {
+.card-list li {
     margin-bottom: 10px;
     position: relative;
     padding-left: 20px;
     font-size: 0.95em;
-    color: var(--text-color);
+    color: #ddd;
 }
 
-.timeline-content ul li::before {
-    content: '\2022'; /* Bullet point */
+.card-list li::before {
+    content: '\2022';
     color: var(--primary-color);
     font-weight: bold;
     display: inline-block;
@@ -485,62 +491,142 @@ body {
     left: 0;
 }
 
+/* Estilo para a instrução de arrastar */
+.scroll-instruction {
+    display: none; /* Esconde por padrão */
+    text-align: center;
+    color: #aaa;
+    margin-top: 20px;
+    font-size: 0.9em;
+    animation: pulse 1.5s infinite; /* Adiciona uma pequena animação */
+}
 
-/* --- Seção Projetos --- */
+.scroll-instruction i {
+    margin: 0 5px;
+}
+
+@media (max-width: 768px) {
+    .scroll-instruction {
+        display: block; /* Mostra apenas em mobile */
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* --- Seção Projetos (MANTIDO ORIGINAL) --- */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
 }
 
 .project-card {
-    background-color: var(--white);
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-    display: flex;
-    flex-direction: column;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(0,170,255,0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0,170,255,0.15);
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(0,170,255,0.5);
 }
 
 .project-card img {
-    width: 100%;
-    height: 220px; /* Altura fixa para as miniaturas */
-    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
-    display: block;
-    border-bottom: 1px solid var(--border-color);
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
 }
 
-.project-card h3 {
-    font-size: 1.5em;
-    color: var(--primary-color);
-    margin: 20px 20px 10px;
+.project-info {
+  padding: 15px;
 }
 
-.project-card p {
-    font-size: 0.95em;
-    color: var(--dark-gray);
-    margin: 0 20px 20px;
-    flex-grow: 1; /* Faz com que o parágrafo ocupe o espaço restante */
+.project-info h4 {
+  color: #00aaff;
+  margin-bottom: 10px;
 }
 
-.project-links {
-    display: flex;
-    justify-content: space-around;
-    padding: 0 20px 20px;
-    margin-top: auto; /* Empurra os links para o final do card */
+.project-info p {
+  font-size: 0.9em;
+  color: #ddd;
+  margin-bottom: 12px;
 }
 
-.view-more-projects {
-    text-align: center;
-    margin-top: 60px;
+.tech-stack span {
+  display: inline-block;
+  margin: 3px;
+  padding: 4px 10px;
+  background: #00aaff;
+  color: #000;
+  border-radius: 10px;
+  font-size: 0.75em;
+  font-weight: bold;
 }
+
+.btn-glow {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #00aaff;
+  color: #000;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 12px rgba(0,170,255,0.6);
+}
+
+.btn-glow:hover {
+  background: #0088cc;
+  box-shadow: 0 0 18px rgba(0,170,255,1);
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.post {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0,170,255,0.4);
+  transition: transform 0.3s ease;
+}
+
+.post img {
+  width: 100%;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.post:hover img {
+  transform: scale(1.1);
+}
+
+.btn-spacing {
+  margin: 10px 10px 0 0;
+}
+
+.bg-dark {
+  background: #0d0d0d;
+  color: #f1f1f1;
+}
+
+.category-title {
+  color: #00aaff;
+  margin: 40px 0 20px;
+  font-size: 1.6em;
+  text-shadow: 0 0 8px rgba(0,170,255,0.6);
+}
+
 
 /* --- Seção Contato --- */
 .contact-intro {
@@ -549,6 +635,7 @@ body {
     max-width: 700px;
     margin: 0 auto 50px;
     line-height: 1.7;
+    color: #ccc;
 }
 
 .contact-content {
@@ -558,13 +645,17 @@ body {
     justify-content: center;
 }
 
-.contact-form {
-    background-color: var(--white);
+.contact-form, .contact-info {
+    background-color: #1a1a1a;
     padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    flex: 2;
+    box-shadow: 0 0 20px rgba(0, 170, 255, 0.1);
+    flex: 1;
     min-width: 300px;
+}
+
+.contact-form {
+    flex: 2;
 }
 
 .contact-form .form-group {
@@ -575,7 +666,7 @@ body {
     display: block;
     font-weight: 600;
     margin-bottom: 8px;
-    color: var(--dark-gray);
+    color: var(--primary-color);
 }
 
 .contact-form input[type="text"],
@@ -584,6 +675,8 @@ body {
     width: 100%;
     padding: 12px 15px;
     border: 1px solid var(--border-color);
+    background-color: #222;
+    color: var(--text-color);
     border-radius: 5px;
     font-family: var(--font-primary);
     font-size: 1em;
@@ -594,12 +687,12 @@ body {
 .contact-form input[type="email"]:focus,
 .contact-form textarea:focus {
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    box-shadow: 0 0 0 3px rgba(0, 170, 255, 0.25);
     outline: none;
 }
 
 .contact-form textarea {
-    resize: vertical; /* Permite redimensionar verticalmente */
+    resize: vertical;
     min-height: 120px;
 }
 
@@ -610,12 +703,6 @@ body {
 }
 
 .contact-info {
-    flex: 1;
-    min-width: 250px;
-    background-color: var(--white);
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -636,7 +723,7 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    color: var(--dark-gray);
+    color: #ccc;
 }
 
 .contact-info p i {
@@ -646,20 +733,21 @@ body {
 
 .contact-info .social-links {
     margin-top: 20px;
-    flex-direction: column; /* Links sociais em coluna no contato */
+    flex-direction: column;
     width: 100%;
     align-items: flex-start;
 }
 
 .contact-info .social-links a {
     margin-bottom: 15px;
-    font-size: 1.1em; /* Ajuste para o texto junto ao ícone */
+    font-size: 1.1em;
     color: var(--primary-color);
     text-decoration: none;
 }
 
 .contact-info .social-links a:hover {
     text-decoration: underline;
+    text-shadow: 0 0 8px rgba(0, 170, 255, 0.6);
 }
 
 .form-status {
@@ -674,236 +762,147 @@ body {
     color: red;
 }
 
-
 /* --- Rodapé --- */
 .footer {
     background-color: var(--dark-gray);
-    color: var(--white);
+    color: #aaa;
     text-align: center;
     padding: 30px 0;
     font-size: 0.9em;
 }
 
-/* --- Animações (para serem ativadas via JS ao rolar) --- */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-.animate-fade-in-up {
-    opacity: 0; /* Escondido por padrão */
-    transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.animate-fade-in {
-    opacity: 0; /* Escondido por padrão */
-    transition: opacity 1s ease-out;
-}
-
-.animated {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
 /* --- Media Queries para Responsividade --- */
-
-/* Telas menores que 992px (tablets e celulares grandes) */
 @media (max-width: 992px) {
     .section-padding {
-        padding: 60px 0; /* Reduz padding em telas menores */
+        padding: 60px 0;
     }
-
     .section-title {
         font-size: 2.2em;
         margin-bottom: 40px;
     }
-
     .hero-content {
-        flex-direction: column-reverse; /* Imagem acima do texto em telas menores */
+        flex-direction: column-reverse;
         text-align: center;
-        gap: 30px; /* Ajusta espaçamento */
+        gap: 30px;
     }
-
     .hero-text {
         text-align: center;
     }
-
     .hero .name {
         font-size: 2.8em;
     }
-
     .hero .role {
         font-size: 1.5em;
     }
-
     .hero-buttons {
         justify-content: center;
     }
-
     .social-links {
         justify-content: center;
     }
-
     .profile-pic {
         width: 220px;
         height: 220px;
-        margin-bottom: 30px; /* Espaçamento entre imagem e texto */
+        margin-bottom: 30px;
     }
-
-    /* Ajustes para a Timeline em Telas Menores */
     .timeline::before {
-        left: 20px; /* Move a linha vertical para a esquerda */
+        left: 20px;
     }
-
     .timeline-item {
-        width: 100%; /* Ocupa a largura total */
-        padding-left: 50px; /* Espaço para a linha e o dot */
+        width: 100%;
+        padding-left: 50px;
         padding-right: 0;
-        left: 0; /* Alinha todos os itens à esquerda */
-        text-align: left; /* Alinha o texto à esquerda */
+        left: 0;
+        text-align: left;
     }
-
-    .timeline-item:nth-child(odd) { /* Itens que antes ficavam à esquerda */
+    .timeline-item:nth-child(odd) {
         padding-right: 0;
     }
-
-    .timeline-item:nth-child(even) { /* Itens que antes ficavam à direita */
-        left: 0; /* Também alinha à esquerda */
+    .timeline-item:nth-child(even) {
+        left: 0;
     }
-
     .timeline-item:nth-child(odd) .timeline-dot,
     .timeline-item:nth-child(even) .timeline-dot {
-        left: 10px; /* Centraliza o dot na linha da esquerda */
-        right: auto; /* Remove o right para evitar conflitos */
+        left: 10px;
+        right: auto;
     }
-
     .timeline-content {
-         border-right: none; /* Garante que não haja borda direita */
-         border-left: 5px solid var(--primary-color); /* Mantém a borda esquerda */
+         border-right: none;
+         border-left: 5px solid var(--primary-color);
     }
-
-    .projects-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ajusta min-width */
-        gap: 30px;
-    }
-
     .contact-content {
-        flex-direction: column; /* Coloca formulário e info em coluna */
+        flex-direction: column;
         gap: 30px;
     }
     .contact-form, .contact-info {
         min-width: unset;
         width: 100%;
-        padding: 30px; /* Reduz padding do formulário e info */
+        padding: 30px;
     }
 }
 
-/* Telas menores que 768px (smartphones) */
 @media (max-width: 768px) {
-    .header .container {
-        flex-wrap: wrap; /* Permite que o logo e o toggle quebrem linha */
+    .nav-toggle {
+        display: block;
     }
-
-    .logo {
-        margin-bottom: 0; /* Remove margem se houver */
-    }
-
-    .nav-menu {
-        flex-grow: 1; /* Faz com que o menu ocupe o espaço restante */
-        text-align: right;
-    }
-
     .nav-menu ul {
-        display: flex; /* Mantém flex para transição de altura */
+        display: none;
         flex-direction: column;
         width: 100%;
-        background-color: var(--white);
         position: absolute;
-        top: 70px; /* Ajuste para ficar abaixo do cabeçalho */
+        top: 70px;
         left: 0;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        background-color: rgba(13, 13, 13, 0.95);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
         border-top: 1px solid var(--border-color);
-        padding: 0; /* Padding inicial 0 para animação */
-        max-height: 0; /* Inicia com altura 0 para animação */
-        overflow: hidden; /* Esconde o conteúdo que transborda */
-        transition: max-height 0.5s ease-out, padding 0.5s ease-out, opacity 0.5s ease-out; /* Transição de altura e padding */
-        opacity: 0; /* Inicia transparente */
-        pointer-events: none; /* Desabilita interações quando invisível */
+        padding: 10px 0;
+        overflow-y: auto;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+        transform: translateY(-10px);
     }
-
-    .nav-menu ul.active { /* Mostrado quando 'active' é adicionado via JS */
-        max-height: calc(100vh - 70px); /* Altura máxima para caber na tela */
-        padding: 10px 0; /* Padding final para os itens */
-        opacity: 1; /* Torna visível */
-        pointer-events: auto; /* Habilita interações */
-        overflow-y: auto; /* Adiciona scroll se os itens forem muitos */
+    .nav-menu ul.active {
+        display: flex;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
     }
-
     .nav-menu ul li {
         margin: 0;
         border-bottom: 1px solid var(--light-gray);
         width: 100%;
     }
-
     .nav-menu ul li:last-child {
         border-bottom: none;
     }
-
     .nav-menu ul li a {
         padding: 15px 20px;
         display: block;
         text-align: center;
         width: 100%;
     }
-
-    .nav-toggle {
-        display: block; /* Mostra o botão do menu hamburguer */
-    }
-
     .hero .name {
         font-size: 2.5em;
     }
-
     .hero .role {
         font-size: 1.3em;
     }
-
     .about-content, .contact-intro {
         font-size: 1em;
     }
-
-    .skills-grid {
-        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    .skills-list {
+        grid-template-columns: 1fr;
     }
-
     .project-card {
-        max-width: 400px; /* Limita largura em telas muito pequenas */
+        max-width: 400px;
         margin: 0 auto;
     }
-    
     .contact-info .social-links a {
-        font-size: 1.05em; /* Ajuste para o texto junto ao ícone em telas menores */
+        font-size: 1.05em;
     }
 }
 
-/* Telas muito pequenas (smartphones pequenos) */
 @media (max-width: 480px) {
     .section-title {
         font-size: 1.8em;
@@ -914,7 +913,7 @@ body {
     .hero .role {
         font-size: 1.1em;
     }
-    .btn {
+    .btn-glow {
         padding: 10px 20px;
         font-size: 0.9em;
     }
@@ -928,161 +927,267 @@ body {
         font-size: 1em;
     }
     .timeline-item {
-        padding-left: 40px; /* Reduz um pouco o padding em telas muito pequenas */
+        padding-left: 40px;
     }
     .timeline::before {
-        left: 15px; /* Ajusta a linha mais para a esquerda ainda */
+        left: 15px;
     }
     .timeline-item:nth-child(odd) .timeline-dot,
     .timeline-item:nth-child(even) .timeline-dot {
-        left: 5px; /* Ajusta o dot mais para a esquerda */
+        left: 5px;
     }
 }
-
-.skills-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+/* --- Novo Estilo para Habilidades na Descrição --- */
+.skill-bubble-description {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    font-weight: 600;
+    white-space: nowrap;
+    margin: 0 4px 4px 0; /* Espaçamento entre os balões */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-speed), background-color var(--transition-speed);
 }
 
-.skill-category {
-    background-color: #ffffff;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+.skill-bubble-description:hover {
+    transform: translateY(-2px);
+    background-color: #0056b3;
+}
+
+/* Estilos para o conteúdo detalhado dos cartões de experiência */
+.card-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, margin-top 0.5s ease-out;
+    margin-top: 0;
+}
+
+.card-details.show {
+    max-height: 500px; /* Um valor grande o suficiente para conter o conteúdo */
+    margin-top: 15px; /* Adiciona um espaço quando expandido */
+}
+
+/* Estilo para o botão "Ver Mais" */
+.btn-read-more {
+    margin-top: 15px;
+    padding: 8px 15px;
+    font-size: 0.9em;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-read-more i {
     transition: transform 0.3s ease;
 }
 
-.skill-category:hover {
-    transform: translateY(-5px);
+.btn-read-more.active i {
+    transform: rotate(180deg);
 }
 
-.skill-category h3 {
-    font-size: 1.5rem;
-    color: #007bff; /* Cor primária */
-    margin-bottom: 15px;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
+/* Estilo para o contador de idade na seção Home */
+.age-counter {
+    margin-top: 15px;
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--secondary-color);
 }
 
-.skill-category ul {
-    list-style: none; /* Remove os marcadores padrão da lista */
-    padding: 0;
-    margin: 0;
+.age-counter span {
+    color: var(--primary-color);
+    font-weight: 700;
 }
 
-.skill-category ul li {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 8px;
-    position: relative;
-    padding-left: 25px; /* Espaço para o marcador personalizado */
-    color: #555;
+/* --- Seção Rodapé (Footer) --- */
+.footer {
+    background-color: #2c2f33; /* Uma cor mais escura para o rodapé */
+    color: var(--light-gray);
+    padding: 30px 0;
+    text-align: center;
 }
 
-.skill-category ul li:last-child {
-    margin-bottom: 0;
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-.skill-category ul li::before {
-    content: '•'; /* Marcador de lista personalizado */
-    color: #007bff; /* Cor do marcador */
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-    top: 0;
+.footer-brand h3 {
+    font-size: 1.5em;
+    color: var(--white);
+    margin-bottom: 5px;
 }
 
-/* Ajustes responsivos para a seção de habilidades */
+.footer-brand p {
+    font-size: 0.9em;
+    color: var(--secondary-color);
+}
+
+.footer-social a {
+    color: var(--light-gray);
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color var(--transition-speed);
+}
+
+.footer-social a:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Responsividade do rodapé */
 @media (max-width: 768px) {
-    .skills-list {
-        grid-template-columns: 1fr; /* Empilha as colunas em telas menores */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-brand,
+    .footer-social {
+        margin-bottom: 15px;
     }
 }
 
-/* --- Seção Habilidades --- */
-.skills-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.skill-category {
-    background-color: var(--white);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    text-align: center;
-    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-    border-bottom: 4px solid var(--primary-color);
-    /* Adicionado para centralizar o conteúdo dentro da categoria */
+/* Estilos para o container dos botões de contato */
+.contact-buttons-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap; /* Para quebrar a linha em telas pequenas */
 }
 
-.skill-category:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+/* Responsividade para botões em telas pequenas */
+@media (max-width: 576px) {
+    .contact-buttons-container .btn {
+        width: 100%; /* Botões ocupam 100% da largura em mobile */
+        text-align: center;
+    }
 }
 
-.skill-category h3 {
-    font-size: 1.8em;
+/* Estilo para o cartão de contato */
+.contact-card {
+    background-color: var(--dark-gray);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-bottom: 4px solid var(--primary-color);
+    max-width: 500px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.contact-card h3 {
     color: var(--primary-color);
     margin-bottom: 20px;
+}
+
+.contact-card p {
+    color: var(--light-gray);
+    font-size: 1.1em;
+    margin: 10px 0;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    width: 100%; /* Garante que o h3 ocupe a largura para o border-bottom */
-    border-bottom: 2px solid var(--light-gray);
-    padding-bottom: 10px;
 }
 
-/* NOVO ESTILO PARA O CONTAINER DOS BALÕES */
-.skill-bubbles {
+/* Estilo para o cartão de contato */
+.contact-card {
+    background-color: var(--dark-gray);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-bottom: 4px solid var(--primary-color);
+    max-width: 500px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.contact-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.contact-card p {
+    color: var(--white);
+    font-size: 1.1em;
+    margin: 10px 0;
     display: flex;
-    flex-wrap: wrap; /* Faz com que os itens quebrem para a próxima linha */
-    justify-content: center; /* Centraliza os balões horizontalmente */
-    gap: 10px; /* Espaçamento entre os balões */
-    margin-top: 15px; /* Espaço entre o título e os balões */
-    width: 100%; /* Ocupa a largura total do pai */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
-/* NOVO ESTILO PARA CADA BALÃO DE HABILIDADE */
-.skill-bubble {
-    background-color: var(--primary-color); /* Fundo azul para o balão */
-    color: var(--white); /* Texto branco */
-    padding: 8px 15px; /* Padding interno */
-    border-radius: 20px; /* Borda bem arredondada para o efeito de balão */
-    font-size: 0.95rem; /* Tamanho da fonte */
-    font-weight: 500;
-    white-space: nowrap; /* Impede que o texto quebre dentro do balão */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    transition: background-color var(--transition-speed), color var(--transition-speed), transform var(--transition-speed); /* Adicionada transição para a cor do texto e transform para hover */
-    margin: 0; /* Remove margem padrão de p */
-    cursor: default; /* Indica que não é clicável */
+/* --- Animação do Menu Sanduíche (Hamburger) --- */
+.nav-toggle {
+    display: none; /* Oculta por padrão */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: relative;
+    z-index: 1000;
 }
 
-.skill-bubble:hover {
-    background-color: var(--white); /* Fundo branco ao passar o mouse */
-    color: var(--primary-color); /* Texto azul ao passar o mouse */
-    transform: translateY(-2px); /* Efeito sutil de levantar */
+.nav-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
 }
 
-.about-left {
-    text-align: left;
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-toggle.active .bar:nth-child(2) {
+        opacity: 0; /* Esconde o traço do meio */
+    }
+
+    .nav-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg); /* Gira o traço de cima */
+    }
+
+    .nav-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg); /* Gira o traço de baixo */
+    }
 }
 
-.about-left ul,
-.about-left ol {
-    margin-left: 20px;
-    padding-left: 20px;
-    text-align: left;
+/* --- Estilo para Marcar a Seção Ativa no Menu --- */
+.nav-list a {
+    position: relative;
+    padding-bottom: 5px;
 }
 
-.about-left p {
-    text-align: left;
+.nav-list a.active,
+.nav-list a:hover {
+    color: var(--primary-color);
 }
+
+.nav-list a.active::after,
+.nav-list a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transform: scaleX(1);
+    transition: transform 0.3s ease;
+}
+
+.nav-list a:not(.active)::after {
+    transform: scaleX(0);
+}
+
