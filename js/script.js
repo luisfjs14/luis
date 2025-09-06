@@ -1,124 +1,118 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Seleciona o botão de toggle do menu (hamburguer)
+    // Lógica para o menu sanduíche
     const navToggle = document.querySelector('.nav-toggle');
-    // Seleciona a lista de navegação
-    const navList = document.querySelector('.nav-list');
-    // Seleciona todos os links dentro da lista de navegação
-    const navLinks = document.querySelectorAll('.nav-list a');
+    const navMenu = document.querySelector('.nav-list');
 
-    // Funcionalidade do menu sanduíche
-    if (navToggle && navList) {
-        navToggle.addEventListener('click', function() {
-            navList.classList.toggle('active'); // Adiciona/remove a classe 'active'
-            // Opcional: Adicionar classe para mudar o ícone do hamburguer para um 'X'
-            navToggle.querySelector('i').classList.toggle('fa-bars');
-            navToggle.querySelector('i').classList.toggle('fa-times');
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
         });
 
-        // Fecha o menu ao clicar em um link (para single-page applications)
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                if (navList.classList.contains('active')) {
-                    navList.classList.remove('active');
-                    // Opcional: Voltar o ícone para o hamburguer
-                    navToggle.querySelector('i').classList.add('fa-bars');
-                    navToggle.querySelector('i').classList.remove('fa-times');
-                }
+        // Fecha o menu ao clicar em um link
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
             });
         });
     }
 
-    // Funcionalidade de animação ao rolar (já existente, ajustada para ser mais robusta)
-    const animateElements = document.querySelectorAll('.animate-fade-in-up, .animate-fade-in');
+    // Lógica para o contador de idade na seção Home
+    function updateAge() {
+        const birthDate = new Date(2004, 0, 1);
+        const currentDate = new Date();
+
+        let years = currentDate.getFullYear() - birthDate.getFullYear();
+        let months = currentDate.getMonth() - birthDate.getMonth();
+        let days = currentDate.getDate() - birthDate.getDate();
+
+        if (days < 0) {
+            months--;
+            const lastMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0);
+            days = lastMonth.getDate() + days;
+        }
+        if (months < 0) {
+            years--;
+            months = 12 + months;
+        }
+
+        const yearsSpan = document.getElementById('years');
+        const monthsSpan = document.getElementById('months');
+        const daysSpan = document.getElementById('days');
+
+        if (yearsSpan && monthsSpan && daysSpan) {
+            yearsSpan.innerText = years;
+            monthsSpan.innerText = months;
+            daysSpan.innerText = days;
+        }
+    }
+
+    updateAge();
+    setInterval(updateAge, 86400000);
+
+    // Lógica para o botão "Ver Mais" nas Experiências
+    const readMoreButtons = document.querySelectorAll('.btn-read-more');
+
+    readMoreButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const cardDetails = this.previousElementSibling;
+            const icon = this.querySelector('i');
+
+            cardDetails.classList.toggle('show');
+            this.classList.toggle('active');
+
+            if (cardDetails.classList.contains('show')) {
+                this.innerHTML = 'Ver Menos <i class="fas fa-chevron-up"></i>';
+            } else {
+                this.innerHTML = 'Ver Mais <i class="fas fa-chevron-down"></i>';
+            }
+        });
+    });
+
+    // Código para Animação de Scroll e Link Ativo
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-list a');
 
     const observerOptions = {
-        root: null, // Observa a viewport
+        root: null,
         rootMargin: '0px',
-        threshold: 0.1 // 10% do elemento visível para acionar
+        threshold: 0.2
     };
 
-    const observer = new IntersectionObserver((entries, observer) => {
+    const sectionObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('animated');
-                observer.unobserve(entry.target); // Para animar apenas uma vez
+                const currentId = entry.target.id;
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${currentId}`) {
+                        link.classList.add('active');
+                    }
+                });
             }
         });
     }, observerOptions);
 
-    animateElements.forEach(element => {
-        observer.observe(element);
+    sections.forEach(section => {
+        sectionObserver.observe(section);
     });
 
-    // Animação para a foto de perfil na seção home (já existente)
-    const profilePic = document.querySelector('.profile-pic');
-    if (profilePic) {
-        profilePic.classList.add('animated'); // Inicia a animação imediatamente ou conforme definido no CSS
-    }
+    // Código para Animação de Entrada
+    const animateElements = document.querySelectorAll('.animate-fade-in-up, .animate-fade-in');
 
-    // Funcionalidade de scrollspy para destacar o link ativo no cabeçalho
-    const sections = document.querySelectorAll('section');
-    const navListItems = document.querySelectorAll('.nav-list li a');
-
-    function highlightNavLink() {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100; // Ajuste para o offset do cabeçalho fixo
-            const sectionHeight = section.clientHeight;
-            if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
-                current = section.getAttribute('id');
+    const animationObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+                animationObserver.unobserve(entry.target);
             }
         });
+    }, {
+        threshold: 0.1
+    });
 
-        navListItems.forEach(item => {
-            item.classList.remove('active');
-            if (item.getAttribute('href').includes(current)) {
-                item.classList.add('active');
-            }
-        });
-    }
-
-    window.addEventListener('scroll', highlightNavLink);
-    window.addEventListener('load', highlightNavLink); // Para destacar na carga da página
-
-    // Lidar com o envio do formulário de contato (já existente)
-    const contactForm = document.getElementById('contactForm');
-    const formStatus = document.getElementById('form-status');
-
-    if (contactForm) {
-        contactForm.addEventListener('submit', async function(event) {
-            event.preventDefault(); // Impede o envio padrão do formulário
-
-            const formData = new FormData(this);
-            try {
-                const response = await fetch(this.action, {
-                    method: 'POST',
-                    // --- ATENÇÃO: MUDE ESTAS DUAS LINHAS ABAIXO ---
-                    body: new URLSearchParams(formData).toString(), // Converte FormData para o formato esperado pelo Apps Script
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded' // Informa o tipo de conteúdo
-                    }
-                    // --- FIM DA MUDANÇA ---
-                });
-
-                // Tenta analisar a resposta como JSON
-                const data = await response.json(); 
-
-                // Verifica a propriedade 'success' da resposta do Apps Script
-                if (data.success) { 
-                    formStatus.textContent = 'Mensagem enviada com sucesso! Em breve entrarei em contato.';
-                    formStatus.className = 'form-status success';
-                    this.reset(); // Limpa o formulário
-                } else {
-                    // Exibe a mensagem de erro que veio do Apps Script
-                    formStatus.textContent = 'Ocorreu um erro ao enviar a mensagem: ' + (data.message || 'Erro desconhecido');
-                    formStatus.className = 'form-status error';
-                }
-            } catch (error) {
-                console.error("Erro na requisição fetch ou processamento da resposta:", error); // Log para depuração
-                formStatus.textContent = 'Ocorreu um erro de rede ou o serviço está temporariamente indisponível. Tente novamente mais tarde.';
-                formStatus.className = 'form-status error';
-            }
-        });
-    }
+    animateElements.forEach(element => {
+        animationObserver.observe(element);
+    });
 });
