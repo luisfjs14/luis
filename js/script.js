@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Lógica para o contador de idade na seção Home
     function updateAge() {
-        const birthDate = new Date(2004, 0, 1);
+        const birthDate = new Date(2004, 5, 8);
         const currentDate = new Date();
 
         let years = currentDate.getFullYear() - birthDate.getFullYear();
