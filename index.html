@@ -3,52 +3,71 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Luís F. Soares | Desenvolvedor Front-end</title>
+        <title>Luís F. Soares</title>
         <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <link rel="icon" type="image/png" href="assets/favicon.png" />
     </head>
     <body>
-
         <header class="header">
-            <div class="container">
-                <h1 class="logo">Luís F. de J Soares</h1>
-                <nav class="nav-menu">
-                    <button class="nav-toggle" aria-label="Abrir Menu">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <ul class="nav-list">
-                        <li><a href="#home">Início</a></li>
-                        <li><a href="#sobre">Sobre Mim</a></li>
-                        <li><a href="#habilidades">Habilidades</a></li>
-                        <li><a href="#experiencia">Experiência & Formação</a></li>
-                        <li><a href="#projetos">Projetos</a></li>
-                        <li><a href="#contato">Contato</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+    <div class="container">
+        <h1 class="logo">Luís F. de J Soares</h1>
+        <nav class="nav-menu">
+            <button class="nav-toggle" aria-label="Abrir Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-list">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#about">Sobre Mim</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#experience">Minha Jornada</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
         <section id="home" class="hero section-padding">
             <div class="container hero-content">
                 <div class="hero-text">
                     <p class="subtitle animate-fade-in-up">Olá, eu sou</p>
                     <h2 class="name animate-fade-in-up">Luís Felipe de J. Soares</h2>
-                    <h3 class="role animate-fade-in-up">Desenvolvedor de Softwares & Analista Financeiro</h3>
                     <p class="description animate-fade-in-up">
-                        Profissional com sólida experiência em desenvolvimento web e automação de processos,
-                        com foco na criação de soluções eficientes e funcionais. Atuo também como Analista Financeiro,
-                        o que me permite uma visão estratégica e analítica na resolução de problemas.
-                        Estou em busca de desafios que unam minhas habilidades técnicas e vontade de aprender.
-                    </p>
+                <span class="skill-bubble-description">Desenvolvedor Front-end</span> |
+                <span class="skill-bubble-description">Designer Gráfico</span> |
+                <span class="skill-bubble-description">Gestor Financeiro</span>
+            </p>
+            <div id="age-counter" class="age-counter animate-fade-in-up">
+                <p>Tenho <span id="years"></span> anos, <span id="months"></span> meses e <span id="days"></span> dias de vida.</p>
+            </div>
+                    <p class="description animate-fade-in-up">
+    Especialista multifacetado, unindo a criatividade do
+    <span class="skill-bubble-description">Design Gráfico</span>
+    com a lógica do
+    <span class="skill-bubble-description">Desenvolvimento Front-end</span>.
+    Tenho proficiência em tecnologias como
+    <span class="skill-bubble-description">HTML5</span>,
+    <span class="skill-bubble-description">CSS3</span> e
+    <span class="skill-bubble-description">JavaScript</span>,
+    e a minha base em
+    <span class="skill-bubble-description">Gestão Financeira</span>
+    me capacita a tomar decisões estratégicas e eficientes, criando projetos que são visualmente impactantes e financeiramente sólidos.
+</p>
                     <div class="hero-buttons animate-fade-in-up">
-                        <a href="#projetos" class="btn btn-primary">Ver Projetos <i class="fas fa-arrow-right"></i></a>
-                        <a href="assets/Currículo - Luís Felipe de Jesus Soares.pdf" target="_blank" class="btn btn-secondary">Baixar Currículo <i class="fas fa-download"></i></a>
+                        <a href="#projects" class="btn-glow">Ver Projetos <i class="fas fa-arrow-right"></i></a>
+                        <a href="assets/Currículo - Luís Felipe de Jesus Soares.pdf" target="_blank" class="btn-glow">Baixar Currículo <i class="fas fa-download"></i></a>
                     </div>
                     <div class="social-links animate-fade-in-up">
-                        <a href="https://www.linkedin.com/in/luisfjsoares/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/luisfjs14" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.instagram.com/luisfjsoares/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a> <a href="mailto:soares.lfj@outlook.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                    </div>
+    <a href="https://www.linkedin.com/in/luisfjsoares/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/luisfjs14" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://www.instagram.com/luisfjsoares/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://wa.me/5534992038802" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+5534992038802" aria-label="Telefone"><i class="fas fa-phone"></i></a>
+    <a href="mailto:soares.lfj@outlook.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+</div>
                 </div>
                 <div class="hero-image animate-fade-in">
                     <img src="assets/images/foto-perfil.jpeg" alt="Foto de Luís Felipe" class="profile-pic">
@@ -56,279 +75,376 @@
             </div>
         </section>
 
-        <section id="sobre" class="about section-padding">
-            <div class="container">
-                <h2 class="section-title animate-fade-in-up">Sobre Mim</h2>
-                <div class="about-content">
-                    <p class="animate-fade-in-up">
-                        Com uma base sólida em Administração e Desenvolvimento de Sistemas, minha jornada profissional me proporcionou uma visão única sobre a otimização de processos. Iniciei minha carreira como Analista Financeiro no Colégio Objetivo Uberaba, onde não apenas gerenciei recursos, mas também desenvolvi soluções personalizadas para automação de tarefas administrativas e financeiras, resultando em redução de custos operacionais.
-                    </p>
-                    <p class="animate-fade-in-up">
-                        Minha paixão por tecnologia me levou a atuar também como Desenvolvedor na mesma instituição, criando sistemas como um controle financeiro para cantina escolar e desenvolvendo o site da empresa. Paralelamente, atuo em projetos pessoais e freelancers, utilizando HTML, CSS, JavaScript e Google Apps Script para criar soluções como sistemas web com login, PDV e integração com Google Sheets/Drive.
-                    </p>
-                    <p class="animate-fade-in-up">
-                        Sou proativo, com boa comunicação e facilidade de trabalho em equipe, sempre buscando aprender novas tecnologias e entregar resultados eficientes e funcionais. Meu objetivo é atuar como Desenvolvedor de Softwares, contribuindo com minhas habilidades técnicas e vontade de crescer na área de desenvolvimento de sistemas.
-                    </p>
+        <section id="about" class="about section-padding">
+    <div class="container">
+        <h2 class="section-title animate-fade-in-up">Sobre Mim</h2>
+        <div class="about-content">
+            <p class="animate-fade-in-up">
+                Com uma sólida experiência de mais de 3 anos na
+                <span class="skill-bubble-description">gestão financeira</span>
+                do Colégio Objetivo Uberaba, eu aliei minha visão estratégica de negócios com o
+                <span class="skill-bubble-description">desenvolvimento de soluções tecnológicas</span>.
+                Minha trajetória se destaca na criação de
+                <span class="skill-bubble-description">projetos internos</span>
+                que visam a praticidade, a automação e a otimização de processos, gerando valor e eficiência para a organização.
+            </p>
+            <p class="animate-fade-in-up">
+                Além da minha atuação na empresa, dedico-me a projetos como
+                <span class="skill-bubble-description">freelancer</span>,
+                onde transformo ideias complexas em experiências digitais funcionais e visualmente atraentes. Sou apaixonado por resolver problemas através da tecnologia e busco constantemente aplicar minha expertise para desenvolver soluções eficientes e de alto impacto.
+            </p>
+            <div class="about-button animate-fade-in-up">
+                <a href="#projects" class="btn-glow">Ver meus projetos <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <section id="skills" class="section-padding bg-light">
+    <div class="container">
+        <h2 class="section-title animate-fade-in-up">Habilidades Técnicas</h2>
+        <div class="skills-list">
+            <div class="skill-category animate-fade-in-up">
+                <h3>Desenvolvimento de Software</h3>
+                <div class="skill-bubbles">
+                    <p class="skill-bubble">HTML5</p>
+                    <p class="skill-bubble">CSS3</p>
+                    <p class="skill-bubble">JavaScript</p>
+                    <p class="skill-bubble">C#</p>
+                    <p class="skill-bubble">.NET</p>
+                    <p class="skill-bubble">PHP</p>
+                    <p class="skill-bubble">Google Apps Script</p>
+                    <p class="skill-bubble">Responsividade</p>
+                    <p class="skill-bubble">UI/UX Básico</p>
                 </div>
             </div>
-        </section>
-
-        <section id="habilidades" class="section-padding bg-light">
-            <div class="container">
-                <h2 class="section-title animate-fade-in-up">Minhas Habilidades</h2>
-                <div class="skills-list">
-                    <div class="skill-category animate-fade-in-up">
-                        <h3>Linguagens & Frameworks</h3>
-                        <div class="skill-bubbles"> <p class="skill-bubble">HTML5</p>
-                            <p class="skill-bubble">CSS3</p>
-                            <p class="skill-bubble">Js</p>
-                            <p class="skill-bubble">.NET</p>
-                            <p class="skill-bubble">C</p>
-                            <p class="skill-bubble">C#</p>
-                            <p class="skill-bubble">PHP</p>
-                        </div>
-                    </div>
-                    <div class="skill-category animate-fade-in-up delay-1">
-                        <h3>Ferramentas & Plataformas</h3>
-                        <div class="skill-bubbles"> <p class="skill-bubble">Git</p>
-                            <p class="skill-bubble">GitHub</p>
-                            <p class="skill-bubble">VS Code</p>
-                            <p class="skill-bubble">Git</p>
-                            <p class="skill-bubble">MySQL</p>
-                            <p class="skill-bubble">Azure</p>
-                        </div>
-                    </div>
-                    <div class="skill-category animate-fade-in-up delay-2">
-                        <h3>Conceitos & Metodologias</h3>
-                        <div class="skill-bubbles"> <p class="skill-bubble">Design Responsivo</p>
-                            <p class="skill-bubble">Versionamento de Código</p>
-                            <p class="skill-bubble">UI/UX Básico</p>
-                            <p class="skill-bubble">Testes de Código</p>
-                        </div>
-                    </div>
+            <div class="skill-category animate-fade-in-up">
+                <h3>Gestão Financeira</h3>
+                <div class="skill-bubbles">
+                    <p class="skill-bubble">Análise Financeira</p>
+                    <p class="skill-bubble">Otimização de Processos</p>
+                    <p class="skill-bubble">Orçamento</p>
+                    <p class="skill-bubble">Power BI</p>
+                    <p class="skill-bubble">Excel</p>
+                    <p class="skill-bubble">Google Sheets</p>
                 </div>
             </div>
-        </section>
-
-        <section id="experiencia" class="about section-padding">
-            <div class="container">
-                <h2 class="section-title animate-fade-in-up">Experiência & Formação</h2>
-
-                <div class="timeline">
-                    <div class="timeline-item animate-fade-in-up">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2025</div>
-                        <div class="timeline-content">
-                            <h3>Desenvolvedor Web (Autônomo)</h3>
-                            <ul>
-                                <li>Desenvolvimento de sistema web para cantina escolar com login de responsáveis, saldo por aluno, PDV e integração com planilhas Google e Google Drive.</li>
-                                <li>Criação de formulários personalizados com validação de CPF e upload de documentos.</li>
-                                <li>Tecnologias utilizadas: HTML, CSS, JavaScript, Google Apps Script.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-item animate-fade-in-up">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2024 - ATUAL</div>
-                        <div class="timeline-content">
-                            <h3>Bacharelado em Administração (Cursando)</h3>
-                            <h4>Instituto Federal do Triângulo Mineiro</h4>
-                            <ul>
-                                <li>Estudo de gestão financeira e otimização de recursos.</li>
-                                <li>Desenvolvimento de visão estratégica e analítica.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-item animate-fade-in-up">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2022 - ATUAL</div>
-                        <div class="timeline-content">
-                            <h3>Analista Financeiro</h3>
-                            <h4>OBJETIVO UBERABA</h4>
-                            <ul>
-                                <li>Gerenciamento de processos financeiros e operacionais, garantindo a otimização de recursos e alinhamento com os objetivos estratégicos.</li>
-                                <li>Desenvolvimento de sistemas personalizados para automação de tarefas administrativas e financeiras, reduzindo custos operacionais.</li>
-                                <li>Liderança de equipes interdisciplinares, promovendo treinamentos e melhoria contínua nos processos internos.</li>
-                                <li>Criação e análise de dashboards com Power BI para acompanhamento de indicadores de performance (KPIs).</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    
-
-                    <div class="timeline-item animate-fade-in-up">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2022 - 2024</div>
-                        <div class="timeline-content">
-                            <h3>Desenvolvedor</h3>
-                            <h4>Colégio Objetivo Uberaba</h4>
-                            <ul>
-                                <li>Criação de sistema de controle financeiro para cantina escolar.</li>
-                                <li>Desenvolvimento Web do site da empresa.</li>
-                                <li>Projetos para Instagram.</li>
-                                <li>Desenvolvimento de sistemas de gestão financeira para otimização.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item animate-fade-in-up">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2022</div>
-                        <div class="timeline-content">
-                            <h3>Estagiário em Marketing</h3>
-                            <h4>P&P Pisos e Persianas</h4>
-                            <ul>
-                                <li>Criação de templates para Instagram.</li>
-                                <li>Desenvolvimento do site da loja.</li>
-                                <li>Social Media.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item animate-fade-in-up">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2020 - 2022</div>
-                        <div class="timeline-content">
-                            <h3>Tecnólogo em Desenvolvimento de Sistemas</h3>
-                            <h4>SENAI MG</h4>
-                            <ul>
-                                <li>Formação prática em desenvolvimento de software e sistemas web.</li>
-                                <li>Aprendizado de linguagens e ferramentas essenciais para a área de TI.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item animate-fade-in-up">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2018 - 2020</div>
-                        <div class="timeline-content">
-                            <h3>Ensino Médio Completo</h3>
-                            <h4>Colégio Mais Positivo - Uberlândia, MG</h4>
-                            <p>Conclusão do ensino médio, fornecendo base educacional sólida.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item animate-fade-in-up">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2017 - 2018</div>
-                        <div class="timeline-content">
-                            <h3>Curso de Inglês</h3>
-                            <h4>2 Anos de Duração</h4>
-                            <p>Desenvolvimento de fluência e compreensão da língua inglesa.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item animate-fade-in-up">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2009 - 2017</div>
-                        <div class="timeline-content">
-                            <h3>Ensino Fundamental Completo</h3>
-                            <p>Formação básica essencial para o desenvolvimento educacional.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item animate-fade-in-up">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2004</div>
-                        <div class="timeline-content">
-                            <h3>Nascimento</h3>
-                            <p>Início da jornada.</p>
-                        </div>
-                    </div>
+            <div class="skill-category animate-fade-in-up">
+                <h3>Ferramentas & Outros</h3>
+                <div class="skill-bubbles">
+                    <p class="skill-bubble">Git</p>
+                    <p class="skill-bubble">GitHub</p>
+                    <p class="skill-bubble">VS Code</p>
+                    <p class="skill-bubble">SQL</p>
+                    <p class="skill-bubble">MySQL</p>
+                    <p class="skill-bubble">MongoDB</p>
+                    <p class="skill-bubble">Jira</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
-        <section id="projetos" class="section-padding bg-light">
-            <div class="container">
-                <h2 class="section-title animate-fade-in-up">Meus Projetos</h2>
-                <div class="projects-grid">
-                    <div class="project-card animate-fade-in-up">
-                        <img src="assets/images/objetivo.png" alt="Miniatura do Site do Colégio Objetivo Uberaba">
-                        <h3>Website Institucional Colégio Objetivo Uberaba</h3>
-                        <p>Desenvolvimento, manutenção e otimização do site oficial da instituição. O projeto envolveu a criação de um design responsivo, implementação de funcionalidades interativas e garantia de uma experiência de usuário fluida. Contribuiu para a presença digital e comunicação com pais e alunos.</p>
-                        <div class="project-links">
-                            <a href="https://objetivointegradouberaba.com/" target="_blank" class="btn btn-sm btn-outline">Visitar Site<i class="fas fa-external-link-alt"></i></a>
-                            <a href="objetivo.html" class="btn btn-sm btn-outline">Sobre o Projeto<i class="fab fa-github"></i></a>
-                        </div>
+<section id="experience" class="about section-padding">
+    <div class="container">
+        <h2 class="section-title animate-fade-in-up">Minha Jornada</h2>
+        <div class="experience-grid">
+            <div class="experience-card animate-fade-in-up">
+                <div class="card-icon"><i class="fas fa-code-branch"></i></div>
+                <div class="card-content">
+                    <h4 class="card-title">Desenvolvedor Web (Autônomo)</h4>
+                    <p class="card-subtitle">Freelancer</p>
+                    <p class="card-date">2025 - Atual</p>
+                    <div class="card-details">
+                        <ul class="card-list">
+                            <li>Desenvolvimento de sistema web para cantina escolar com login de responsáveis, saldo por aluno, PDV e integração com planilhas Google e Google Drive.</li>
+                            <li>Criação de formulários personalizados com validação de CPF e upload de documentos.</li>
+                        </ul>
                     </div>
-                    <div class="project-card animate-fade-in-up">
-                        <img src="assets/images/jeanjeans.png" alt="Miniatura do projeto">
-                        <h3>Site institucional para Jean Jeans - Uberaba</h3>
-                        <p>Este projeto é uma loja virtual especializada em moda jeans, desenvolvida com foco em responsividade e usabilidade. A plataforma oferece um catálogo de produtos detalhado, um carrinho de compras interativo e, como destaque, um guia de tamanhos personalizado para auxiliar os clientes a encontrar o caimento perfeito. O processo de compra é simplificado através de um sistema de checkout via WhatsApp.</p>
-                        <div class="project-links">
-                            <a href="https://jeanjeansstore.com.br/" target="_blank" class="btn btn-sm btn-outline">Visitar Site<i class="fas fa-external-link-alt"></i></a>
-                            <a href="https://github.com/luisfjs14/jeanjeans" target="_blank" class="btn btn-sm btn-outline">Projeto no GitHub<i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-card animate-fade-in-up">
-                        <img src="assets/images/papelariatitan.png" alt="Miniatura do projeto">
-                        <h3>Site institucional para Titan Papelaria - Uberaba</h3>
-                        <p>
-Este é um projeto de e-commerce completo para a Titan Papelaria, desenvolvido para ser totalmente responsivo. A plataforma conta com um catálogo de produtos interativo, um carrinho de compras funcional e um sistema de checkout simplificado, que gera pedidos diretamente via WhatsApp.</p>
-                        <div class="project-links">
-                            <a href="https://papelariatitan.com/" target="_blank" class="btn btn-sm btn-outline">Visitar Site<i class="fas fa-external-link-alt"></i></a>
-                            <a href="https://github.com/luisfjs14/titanpapelaria" target="_blank" class="btn btn-sm btn-outline">Projeto no GitHub<i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="view-more-projects animate-fade-in-up">
-                    <a href="https://github.com/luisfjs14" target="_blank" class="btn btn-primary">Ver Mais no GitHub <i class="fas fa-arrow-right"></i></a>
+                    <button class="btn btn-secondary btn-read-more">Ver Mais <i class="fas fa-chevron-down"></i></button>
                 </div>
             </div>
-        </section>
 
-        <section id="contato" class="about section-padding">
-            <div class="container">
-                <h2 class="section-title animate-fade-in-up">Entre em Contato</h2>
-                <p class="contact-intro animate-fade-in-up">Estou sempre aberto a novas oportunidades e colaborações. Sinta-se à vontade para me contatar através do formulário ou das minhas redes sociais.</p>
-                <div class="contact-content">
-                    <div class="contact-form">
-                        <form id="contactForm" action="https://script.google.com/macros/s/AKfycbyIC7YjaKZ9BWUq9pQ-PNReMS1XK0EQjIbJl0mAFsLxvSmm5ec3FJJ-5unP0waxQm0u/exec" method="POST">
-                            <div class="form-group">
-                                <label for="name">Seu Nome:</label>
-                                <input type="text" id="name" name="nome" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Seu Email:</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Seu Telefone:</label>
-                                <input type="text" id="phone" name="telefone">
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Sua Mensagem:</label>
-                                <textarea id="message" name="mensagem" rows="6" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
-                            <div id="form-status" class="form-status"></div>
-                        </form>
+            <div class="experience-card animate-fade-in-up">
+                <div class="card-icon"><i class="fas fa-university"></i></div>
+                <div class="card-content">
+                    <h4 class="card-title">Bacharelado em Administração (Cursando)</h4>
+                    <p class="card-subtitle">Instituto Federal do Triângulo Mineiro</p>
+                    <p class="card-date">2024 - Atual</p>
+                    <div class="card-details">
+                        <ul class="card-list">
+                            <li>Estudo de gestão financeira e otimização de recursos.</li>
+                            <li>Desenvolvimento de visão estratégica e analítica.</li>
+                        </ul>
                     </div>
-                    <div class="contact-info animate-fade-in-up">
-                        <h3>Informações de Contato</h3>
-                        <p><i class="fas fa-envelope"></i> soares.lfj@outlook.com</p>
-                        <p><i class="fas fa-phone"></i> (34) 99203-8802</p>
-                        <div class="social-links large-icons">
-                            <a href="https://www.linkedin.com/in/luisfjsoares/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                            <a href="https://github.com/luisfjs14" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i> GitHub</a>
-                            <a href="https://www.instagram.com/luisfjsoares" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i> Instagram</a> </div>
-                    </div>
+                    <button class="btn btn-secondary btn-read-more">Ver Mais <i class="fas fa-chevron-down"></i></button>
                 </div>
-                <div id="form-status" class="form-status"></div>
             </div>
-        </section>
+
+            <div class="experience-card animate-fade-in-up">
+                <div class="card-icon"><i class="fas fa-briefcase"></i></div>
+                <div class="card-content">
+                    <h4 class="card-title">Analista Financeiro e Desenvolvedor</h4>
+                    <p class="card-subtitle">OBJETIVO UBERABA</p>
+                    <p class="card-date">2022 - Atual</p>
+                    <div class="card-details">
+                        <ul class="card-list">
+                            <li>Gerenciamento de processos financeiros e operacionais, garantindo a otimização de recursos.</li>
+                            <li>Desenvolvimento de sistemas personalizados para automação de tarefas administrativas e financeiras, como o sistema de controle da cantina.</li>
+                            <li>Criação e análise de dashboards com Power BI para acompanhamento de indicadores de performance (KPIs).</li>
+                            <li>Criação e gerenciamento do website institucional e projetos de social media para o Instagram.</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-secondary btn-read-more">Ver Mais <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <div class="experience-card animate-fade-in-up">
+                <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                <div class="card-content">
+                    <h4 class="card-title">Estagiário em Marketing</h4>
+                    <p class="card-subtitle">P&P Pisos e Persianas</p>
+                    <p class="card-date">2022</p>
+                    <div class="card-details">
+                        <ul class="card-list">
+                            <li>Criação de templates para Instagram e desenvolvimento do site da loja.</li>
+                            <li>Atuação como Social Media.</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-secondary btn-read-more">Ver Mais <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <div class="experience-card animate-fade-in-up">
+                <div class="card-icon"><i class="fas fa-code"></i></div>
+                <div class="card-content">
+                    <h4 class="card-title">Tecnólogo em Desenvolvimento de Sistemas</h4>
+                    <p class="card-subtitle">SENAI MG</p>
+                    <p class="card-date">2020 - 2022</p>
+                    <div class="card-details">
+                        <ul class="card-list">
+                            <li>Formação prática em desenvolvimento de software e sistemas web.</li>
+                            <li>Aprendizado de linguagens e ferramentas essenciais para a área de TI.</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-secondary btn-read-more">Ver Mais <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <div class="experience-card animate-fade-in-up">
+                <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="card-content">
+                    <h4 class="card-title">Ensino Médio Completo</h4>
+                    <p class="card-subtitle">Colégio Mais Positivo - Uberlândia, MG</p>
+                    <p class="card-date">2018 - 2020</p>
+                    <div class="card-details">
+                        <ul class="card-list">
+                            <li>Conclusão do ensino médio, fornecendo base educacional sólida.</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-secondary btn-read-more">Ver Mais <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <div class="experience-card animate-fade-in-up">
+                <div class="card-icon"><i class="fas fa-language"></i></div>
+                <div class="card-content">
+                    <h4 class="card-title">Curso de Inglês</h4>
+                    <p class="card-date">2017 - 2018</p>
+                    <div class="card-details">
+                        <ul class="card-list">
+                            <li>Desenvolvimento de fluência e compreensão da língua inglesa.</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-secondary btn-read-more">Ver Mais <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <div class="experience-card animate-fade-in-up">
+                <div class="card-icon"><i class="fas fa-book-open"></i></div>
+                <div class="card-content">
+                    <h4 class="card-title">Ensino Fundamental Completo</h4>
+                    <p class="card-date">2009 - 2017</p>
+                    <div class="card-details">
+                        <ul class="card-list">
+                            <li>Formação básica essencial para o desenvolvimento educacional.</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-secondary btn-read-more">Ver Mais <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <div class="experience-card animate-fade-in-up">
+                <div class="card-icon"><i class="fas fa-baby"></i></div>
+                <div class="card-content">
+                    <h4 class="card-title">Nascimento</h4>
+                    <p class="card-date">2004</p>
+                    <div class="card-details">
+                        <ul class="card-list">
+                            <li>Início da jornada.</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-secondary btn-read-more">Ver Mais <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+        </div>
+        <p class="scroll-instruction"><i class="fas fa-arrow-left"></i> Passe o dedo para o lado para ver mais <i class="fas fa-arrow-right"></i></p>
+    </div>
+</section>
+
+        <section id="projects" class="section-padding bg-light">
+  <div class="container">
+    <h2 class="section-title">🚀 Meus Projetos</h2>
+
+    <!-- Sites Institucionais -->
+    <div class="project-category">
+      <h3 class="category-title">🏫 Sites Institucionais</h3>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <img src="assets/images/objetivo.png" alt="Colégio Objetivo Uberaba">
+          <div class="project-info">
+            <h4>Colégio Objetivo Uberaba</h4>
+            <p>Website institucional moderno, responsivo e focado em comunicação com pais e alunos.</p>
+            <div class="tech-stack"><span>HTML</span><span>CSS</span><span>JS</span><span>PHP</span></div>
+            <br><a href="https://objetivointegradouberaba.com/" target="_blank" class="btn-glow">Ver Site</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="assets/images/jeanjeans.png" alt="Jean Jeans Store">
+          <div class="project-info">
+            <h4>Jean Jeans Store</h4>
+            <p>Site institucional com catálogo digital e vitrine online de moda jeans.</p>
+            <div class="tech-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
+            <br>
+            <a href="https://jeanjeansstore.com.br/" target="_blank" class="btn-glow">Ver Site</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- E-commerce -->
+    <div class="project-category">
+      <h3 class="category-title">🛒 E-commerce</h3>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <img src="assets/images/papelariatitan.png" alt="Titan Papelaria">
+          <div class="project-info">
+            <h4>Titan Papelaria</h4>
+            <p>Plataforma de e-commerce responsiva com catálogo, carrinho e pedidos integrados ao WhatsApp.</p>
+            <div class="tech-stack"><span>HTML</span><span>CSS</span><span>JS</span><span>Google Apps Script</span></div>
+            <br><a href="https://papelariatitan.com/" target="_blank" class="btn-glow">Visitar Loja</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Landing Pages -->
+    <div class="project-category">
+      <h3 class="category-title">📢 Landing Pages</h3>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <img src="assets/images/aposentadoria.png" alt="Aposentadoria Blindada">
+          <div class="project-info">
+            <h4>Aposentadoria Blindada</h4>
+            <p>Landing page criada para divulgação de produto financeiro com foco em conversão.</p>
+            <div class="tech-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
+            <br><a href="#" target="_blank" class="btn-glow">Ver Landing</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Design & Social Media -->
+    <div class="project-category">
+      <h3 class="category-title">🎨 Designer Gráfico</h3>
+      <p>Algumas artes que desenvolvi para Instagram:</p>
+      <div class="social-grid">
+        <div class="post"><img src="assets/images/post1.jpg" alt="Post 1"></div>
+        <div class="post"><img src="assets/images/post2.jpg" alt="Post 2"></div>
+        <div class="post"><img src="assets/images/post3.jpg" alt="Post 3"></div>
+        <div class="post"><img src="assets/images/post4.jpg" alt="Post 4"></div>
+      </div>
+    </div>
+
+    <!-- Configuração Google Meu Negócio -->
+    <div class="project-category">
+      <h3 class="category-title">📍 Configuração Google Meu Negócio</h3>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <img src="assets/images/objetivo-gmb.png" alt="Google Negócio Objetivo">
+          <div class="project-info">
+            <h4>Colégio Objetivo Uberaba</h4>
+            <p>Configuração e otimização do perfil do Google Meu Negócio para melhorar presença local.</p>
+            <div class="tech-stack"><span>Google Meu Negócio</span><span>SEO Local</span></div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="assets/images/titan-gmb.png" alt="Google Negócio Titan">
+          <div class="project-info">
+            <h4>Titan Papelaria</h4>
+            <p>Criação e gerenciamento do Google Meu Negócio para aumentar visibilidade nas buscas.</p>
+            <div class="tech-stack"><span>Google Meu Negócio</span><span>SEO Local</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+       <section id="contact" class="about section-padding">
+    <div class="container">
+        <h2 class="section-title animate-fade-in-up">Entre em Contato</h2>
+        <p class="contact-intro animate-fade-in-up">
+            Tenho interesse em oportunidades de trabalho nas áreas de 
+            <span class="skill-bubble-description">Desenvolvimento Web</span>, 
+            <span class="skill-bubble-description">Análise de Dados</span> ou 
+            <span class="skill-bubble-description">Otimização de Processos</span>. 
+            Sinta-se à vontade para me contatar para propostas ou para conversarmos sobre tecnologia.
+        </p>
+        <div class="contact-card animate-fade-in-up">
+            <h3>Informações de Contato</h3>
+            <p><i class="fas fa-envelope"></i> soares.lfj@outlook.com</p>
+            <p><i class="fas fa-phone"></i> (34) 99203-8802</p>
+        </div>
+        <div class="contact-buttons-container animate-fade-in-up">
+            <a href="https://wa.me/5534992038802" target="_blank" class="btn btn-glow">
+                <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
+            </a>
+            <a href="#link-do-seu-catalogo" target="_blank" class="btn btn-glow">
+                <i class="fas fa-external-link-alt"></i> Ver Meu Catálogo
+            </a>
+        </div>
+    </div>
+</section>
 
         <footer class="footer">
-            <div class="container">
-                <p>&copy; 2025 Luís F. de J. Soares. Todos os direitos reservados.</p>
-            </div>
-        </footer>
+    <div class="container footer-content">
+        <div class="footer-brand">
+            <h3>Luís F. de J. Soares</h3>
+            <p>&copy; 2025. Todos os direitos reservados.</p>
+        </div>
+        <div class="footer-social">
+            <a href="https://www.linkedin.com/in/luisfjsoares/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/luisfjs14" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/luisfjsoares/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/5534992038802" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:soares.lfj@outlook.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="tel:+5534992038802" aria-label="Telefone"><i class="fas fa-phone-alt"></i></a>
+        </div>
+    </div>
+</footer>
 
         <script src="js/script.js"></script>
     </body>
 </html>
-
-
-
-
